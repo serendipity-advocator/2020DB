@@ -43,4 +43,4 @@ Open up your browser, enter **_localhost/test.html_** in the url, and there you 
 
 ![index](/Readme/url.PNG)  
 
-The front page should only be named as *test.html* for code realiablity, other pages should follow the same rule unless development stage of this project were done.
+The front page should only be named as *test.html* for code reliability, other pages should follow the same rule unless development stage of this project were done.
