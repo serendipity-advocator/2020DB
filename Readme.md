@@ -25,13 +25,15 @@ Then copy the whole folder **_ebusproject_ from this project** into **_data_**, 
 
 ## How to use?
 ### 1. Open XAMPP control panel
-If XAMPP is installed wihtout error, you should be able to open its control panel through these method 
+If XAMPP is installed wihtout error, you should be able to open its control panel through these method  
+
 1.   
 ![search method](/Readme/search.PNG)  
 
 or  
 
-2. ![start menu method](/Readme/startmenu.PNG)  
+2.   
+![start menu method](/Readme/startmenu.PNG)  
 
 After the panel is showen, turn on **_Apache_** and **_MySQL_** by click *Start* in their column. And it should be like this:
 ![XAMPP control panel](/Readme/controlpanel.PNG)  
