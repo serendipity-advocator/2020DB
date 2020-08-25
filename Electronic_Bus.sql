@@ -13,8 +13,8 @@
 
 
 -- Dumping database structure for testDataBase
-CREATE DATABASE IF NOT EXISTS `testdatabase` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `testDataBase`;
+CREATE DATABASE IF NOT EXISTS `ebus` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `ebus`;
 
 -- Dumping structure for table testDataBase.bus
 CREATE TABLE IF NOT EXISTS `bus` (
@@ -49,8 +49,7 @@ CREATE TABLE IF NOT EXISTS `bus` (
   `爬坡能力` int(11) DEFAULT NULL,
   `馬達功率` int(11) DEFAULT NULL,
   `馬達扭力` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 -- Dumping data for table testDataBase.bus: ~6 rows (approximately)
 DELETE FROM `bus`;
 /*!40000 ALTER TABLE `bus` DISABLE KEYS */;

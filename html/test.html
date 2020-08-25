@@ -1,15 +1,104 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Test Page</title>
+    <meta charset="UTF-8">
+</head>
 <body>
 
 <h1>Front Test</h1>
 
-<form action="/result.php" method = "post">
+<form action="/result.php" method = "GET">
+    <input type="radio" id="search" name="asked_method" value="search" checked>
+    <label for="search">Search</label><br>
+    <input type="radio" id="compare" name="asked_method" value="compare">
+    <label for="compare">Compare</label><br>
+
+    <h2>Check the vehicle you want to view</h2>
+
+    <input type="checkbox" id="K9A" name="vehicle_list[]" value="K9A">
+    <label for="K9A"> K9A</label><br>
+    <input type="checkbox" id="12m" name="vehicle_list[]" value="12米低地板">
+    <label for="12m"> 12米低地板</label><br>
+    <input type="checkbox" id="RAC-700" name="vehicle_list[]" value="RAC-700">
+    <label for="RAC-700"> RAC-700</label><br>
+    <input type="checkbox" id="KL5850L" name="vehicle_list[]" value="KL5850L">
+    <label for="KL5850L"> KL5850L</label><br>
+    <input type="checkbox" id="HFF6708KBEV" name="vehicle_list[]" value="HFF6708KBEV">
+    <label for="HFF6708KBEV"> HFF6708KBEV</label><br>
+
+    <h2>Then check the infomation you want to know</h2>
+
+    <h3>Vehicle status</h3>
+
+    <input type="checkbox" id="class" name="info_list[]" value="class">
+    <label for="class"> 車種</label>
+    <input type="checkbox" id="length" name="info_list[]" value="length">
+    <label for="length"> 長</label>
+    <input type="checkbox" id="width" name="info_list[]" value="width">
+    <label for="width"> 寬</label>
+    <input type="checkbox" id="height" name="info_list[]" value="height">
+    <label for="height"> 高</label><br>
+    <input type="checkbox" id="net_weight" name="info_list[]" value="net_weight">
+    <label for="net_weight"> 車身淨重</label>
+    <input type="checkbox" id="load_weight" name="info_list[]" value="load_weight">
+    <label for="load_weight"> 車身載重</label><br>
+    <input type="checkbox" id="num_seat" name="info_list[]" value="num_seat">
+    <label for="num_seat"> 坐位</label>
+    <input type="checkbox" id="num_stand" name="info_list[]" value="num_stand">
+    <label for="num_stand"> 站位</label>
+    <input type="checkbox" id="num_wheelchair" name="info_list[]" value="num_wheelchair">
+    <label for="num_wheelchair"> 無障礙座位</label>
+    
+    <h3>Perfomance related</h3>
+
+    <input type="checkbox" id="require_energy" name="info_list[]" value="require_energy">
+    <label for="require_energy"> 能源需求/100km</label>
+    <input type="checkbox" id="durability" name="info_list[]" value="durability">
+    <label for="durability"> 續航力(Km)</label>
+    <input type="checkbox" id="maxspeed" name="info_list[]" value="maxspeed">
+    <label for="maxspeed"> 最高速度(Km)</label>
+    <input type="checkbox" id="gradeability" name="info_list[]" value="gradeability">
+    <label for="gradeability"> 爬坡能力(%)</label>
+    <input type="checkbox" id="motor_power" name="info_list[]" value="motor_power">
+    <label for="motor_power"> 馬達功率</label>
+    <input type="checkbox" id="motor_torque" name="info_list[]" value="motor_torque">
+    <label for="motor_torque"> 馬達扭力</label>
+
+    <h3>Price related</h3>
+
+    <input type="checkbox" id="body_price" name="info_list[]" value="body_price">
+    <label for="body_price"> 車身售價</label>
+    <input type="checkbox" id="battery_price" name="info_list[]" value="battery_price">
+    <label for="battery_price"> 電池售價</label>
+    <input type="checkbox" id="battery_unit_price" name="info_list[]" value="battery_unit_price">
+    <label for="battery_unit_price"> 電池單位價格</label>
+    <input type="checkbox" id="charge_station_price" name="info_list[]" value="charge_station_price">
+    <label for="charge_station_price"> 充電站售價</label>
+
+    <h3>Battery related</h3>
+    <input type="checkbox" id="battery_type" name="info_list[]" value="battery_type">
+    <label for="battery_type"> 電池種類</label>
+    <input type="checkbox" id="battery_capacity" name="info_list[]" value="battery_capacity">
+    <label for="battery_capacity"> 電池容量(千瓦)</label>
+    <input type="checkbox" id="battery_warranty" name="info_list[]" value="battery_warranty">
+    <label for="battery_warranty"> 電池保固年限</label>
+    <input type="checkbox" id="charge_method" name="info_list[]" value="charge_method">
+    <label for="charge_method"> 充電方式</label>
+    <input type="checkbox" id="charge_time" name="info_list[]" value="charge_time">
+    <label for="charge_time"> 充電時長</label><br>
+
+
+    <!--
     <select name="transport_name" id="trans">
-        <option value="Propane">Propane</option>
-        <option value="E85">E85</option>
-        <option value="Motor_Gasoline">Motor Gasoline</option>
+        <option value="K9A">K9A</option>
+        <option value="12m">12米低地板</option>
+        <option value="RAC700">RAC-700</option>
+        <option value="KL5850L">KL5850L</option>
+        <option value="HFF6708KBEV">HFF6708KBEV</option>
     </select>
+    <button type="button">Add</button>
+    -->
     <input type="submit" value="Submit">
 </form>
 
