@@ -14,7 +14,7 @@ if (mysqli_connect_errno($conn))
 }
 else
 {
-    echo "連接成功<br>";
+    //echo "連接成功<br>";
 }
 
 $asked_method = $_GET["asked_method"];
@@ -106,6 +106,7 @@ switch ($asked_method) {
 table, th, td {
     border: 1px solid black;
 }
+
 .myProgress {
   width: 100%;
   background-color: #ddd;
@@ -119,12 +120,16 @@ table, th, td {
   line-height: 30px;
   color: white;
 }
+
+#compare_main{
+    display: none;
+}
 </style>
 <title>Result Page</title>
 <meta charset="UTF-8">
 </head>
-<body onload = "Compare()">
-<div id = "compare_main">
+<body>
+<div id="compare_main">
     <h2>Body Price</h2>
     <div class="myProgress">
         <div class="myBar" id = "Body_A"></div>
@@ -144,12 +149,10 @@ table, th, td {
     </div>
 </div>
 
-
-
 <script>
+    window.onload = Compare;
     function Compare(){
         var method = "<?php echo $asked_method; ?>";
-        //alert(method);
         if(method == "compare"){
             document.getElementById("compare_main").style.display = "block";
             var body_A = "<?php echo $comp_value[0]; ?>", body_B = "<?php echo $comp_value[2]; ?>";
