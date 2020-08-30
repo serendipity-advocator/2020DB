@@ -91,15 +91,15 @@
     <div id= "compare_form">
         <h2>Check two vehicle you want to compare</h2>
 
-        <input type="checkbox" id="K9A" name="compare_check[]" value="K9A" onclick="return Compare_check()">
+        <input type="checkbox" id="K9A" name="compare_check[]" value="K9A" onclick="">
         <label for="K9A"> K9A</label><br>
-        <input type="checkbox" id="12m" name="compare_check[]" value="12米低地板" onclick="return Compare_check()">
+        <input type="checkbox" id="12m" name="compare_check[]" value="12米低地板" onclick="">
         <label for="12m"> 12米低地板</label><br>
-        <input type="checkbox" id="RAC-700" name="compare_check[]" value="RAC-700" onclick="return Compare_check()">
+        <input type="checkbox" id="RAC-700" name="compare_check[]" value="RAC-700" onclick="">
         <label for="RAC-700"> RAC-700</label><br>
-        <input type="checkbox" id="KL5850L" name="compare_check[]" value="KL5850L" onclick="return Compare_check()">
+        <input type="checkbox" id="KL5850L" name="compare_check[]" value="KL5850L" onclick="">
         <label for="KL5850L"> KL5850L</label><br>
-        <input type="checkbox" id="HFF6708KBEV" name="compare_check[]" value="HFF6708KBEV" onclick="return Compare_check()">
+        <input type="checkbox" id="HFF6708KBEV" name="compare_check[]" value="HFF6708KBEV" onclick="">
         <label for="HFF6708KBEV"> HFF6708KBEV</label><br>
     </div>
     <!--
@@ -129,7 +129,7 @@
         document.getElementById("main_form").reset();
         document.getElementById("compare").checked = true;
     }
-    function Compare_check(){
+    /*function Compare_check(){
         var check = document.getElementsByName("compare_check[]");
         var i;
         var max_compare = 2, count = 0;
@@ -141,7 +141,7 @@
             alert("請至多選擇 " + max_compare + "個單位");
             return false;
         }
-    }
+    }*/
 </script>
 </body>
 </html>
