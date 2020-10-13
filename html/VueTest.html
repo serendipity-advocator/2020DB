@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vue Test Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link href="../css/VueTest.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div><a class="navbar-brand" href="VueTest.html">Front Test</a></div>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Search</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Compare</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid" id="CompareForm">
+        <form action="/VueResult.php" method="GET">
+            <div class="form-group row">
+                <div class="col-md-4" id="user_condition">
+
+                    <h1>步驟一：填入使用條件</h1>
+                    <br>
+                    <ul style="list-style-type:none">
+                        <li v-for="condition in user_condition">
+                            <h4 :id="condition.name + '_text'">{{condition.title}}</h4>
+                            <input type="text" :id="condition.name" class="form-control"
+                                :placeholder="condition.placeholder" :required="condition.require">
+                            <br>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4" id="car_selection">
+                    <h1>步驟二：選擇車種</h1>
+                    <br>
+                    <ul style="list-style-type:none">
+                        <li v-for="vehicle in vehicle_list">
+                            <input class="form-check-input" type="checkbox" name="compare_check[]" :value="vehicle.name"
+                                :id="vehicle.name" v-model="checked_vehicle_list">
+                            <label @mouseover="vehicle.hover = true" @mouseleave="vehicle.hover = false"
+                                class="form-check-label" :for="vehicle.name">
+                                {{ vehicle.name }}
+                                <p></p>
+                                <img v-show="vehicle.hover" :src="'../img/' + vehicle.name + '.png'" width="300px"
+                                    height="150px">
+                            </label>
+                        </li>
+                    </ul>
+                    <p v-if="checked_vehicle_list.length>0">{{checked_vehicle_list}}</p>
+                </div>
+
+                <div class="col-md-4" id="final_tuning">
+                    <h1>步驟三：其他條件</h1>
+                    <ul style="list-style-type:none">
+                        <li>
+                            <br>
+                            <input class="form-check-input" type="checkbox" value="station" id="station"
+                                v-model="station">
+                            <label for="station">廠站建置</label>
+                            <h6 id="station_price_text" v-if="station">建置成本</h4>
+                                <input type="text" id="station_price" class="form-control" placeholder="例如: 5000000"
+                                    v-if="station" required :disabled="!station">
+                                <br>
+                                <h6 id="station_accountYear_text" v-if="station">會計年限</h4>
+                                    <input type="text" id="station_accountYear" class="form-control"
+                                        placeholder="例如: 10" v-if="station" required :disabled="!station">
+                        </li>
+                        <li>
+                            <br>
+                            <input class="form-check-input" type="checkbox" value="charger" id="charger"
+                                v-model="charger">
+                            <label for="charger">充電設備</label>
+                            <h6 id="charger_price_text" v-if="charger">建置成本</h6>
+                            <input type="text" id="charger_price" class="form-control" placeholder="例如: 5000000"
+                                v-if="charger" required :disabled="!charger">
+                            <br>
+                            <h6 id="charger_accountYear_text" v-if="charger">會計年限</h6>
+                            <input type="text" id="charger_accountYear" class="form-control" placeholder="例如: 10"
+                                v-if="charger" required :disabled="!charger">
+                        </li>
+                    </ul>
+                    <button v-show="checked_vehicle_list.length>0" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#CompareForm',
+            data: {
+                message: 'Hello Vue!',
+                station: false,
+                charger: false,
+                user_condition: [
+                    { name: "boughtYear", title: "購置年份(西元)", placeholder: "例如: 2020", require: true },
+                    { name: "accountYear", title: "會計年限", placeholder: "例如: 10", require: true },
+                    { name: "mileage", title: "年里程數(公里)", placeholder: "例如: 42000", require: true },
+                    { name: "energyPrice", title: "能源價格", placeholder: "此格可選，若留空則使用資料庫之價格", require: false },
+                ],
+                vehicle_list: [
+                    { name: "K9A", hover: false },
+                    { name: "12米低地板", hover: false },
+                    { name: "RAC-700", hover: false },
+                    { name: "KL5850L", hover: false },
+                    { name: "柴油", hover: false }
+                ],
+                checked_vehicle_list: []
+            },
+            computed: {
+
+            }
+        })
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
