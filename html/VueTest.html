@@ -41,7 +41,7 @@
                     <ul style="list-style-type:none">
                         <li v-for="condition in user_condition">
                             <h4 :id="condition.name + '_text'">{{condition.title}}</h4>
-                            <input type="text" :id="condition.name" class="form-control"
+                            <input type="text" name="compare_condition[]" :id="condition.name" class="form-control"
                                 :placeholder="condition.placeholder" :required="condition.require">
                             <br>
                         </li>
