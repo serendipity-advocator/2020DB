@@ -63,6 +63,40 @@ INSERT INTO `bus` (`manufacturer`, `model`, `class`, `energy_source`, `battery_t
 	('創奕能源', '12米低地板', 000, 0001, 0000, 93, 6420000, 2880000, 240, 12000, 620000, 5, b'1', '2', '4', 60, 80, '廈門金旅', 12, 3, 3, 13600, 16300, 27, 15, 2, 150, 90, 20, 230, 3400);
 /*!40000 ALTER TABLE `bus` ENABLE KEYS */;
 
+
+-- 傾印 ebusproject 的資料庫結構
+CREATE DATABASE IF NOT EXISTS `ebusproject` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `ebusproject`;
+
+-- 傾印  資料表 ebusproject.oilprice 結構
+CREATE TABLE IF NOT EXISTS `oilprice` (
+  `transportation` varchar(50) NOT NULL,
+  `apikey` varchar(50) DEFAULT NULL,
+  `y2019` decimal(12,8) unsigned DEFAULT NULL,
+  `y2020` decimal(12,8) unsigned DEFAULT NULL,
+  `y2021` decimal(12,8) unsigned DEFAULT NULL,
+  `y2022` decimal(12,8) unsigned DEFAULT NULL,
+  `y2023` decimal(12,8) unsigned DEFAULT NULL,
+  `y2024` decimal(12,8) unsigned DEFAULT NULL,
+  `y2025` decimal(12,8) unsigned DEFAULT NULL,
+  `y2026` decimal(12,8) unsigned DEFAULT NULL,
+  `y2027` decimal(12,8) unsigned DEFAULT NULL,
+  `y2028` decimal(12,8) unsigned DEFAULT NULL,
+  `y2029` decimal(12,8) unsigned DEFAULT NULL,
+  `y2030` decimal(12,8) unsigned DEFAULT NULL,
+  `growth` decimal(7,4) DEFAULT NULL,
+  PRIMARY KEY (`transportation`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 正在傾印表格  ebusproject.oilprice 的資料：~2 rows (近似值)
+DELETE FROM `oilprice`;
+/*!40000 ALTER TABLE `oilprice` DISABLE KEYS */;
+INSERT INTO `oilprice` (`transportation`, `apikey`, `y2019`, `y2020`, `y2021`, `y2022`, `y2023`, `y2024`, `y2025`, `y2026`, `y2027`, `y2028`, `y2029`, `y2030`, `growth`) VALUES
+	('E85', '3-AEO2020.27.ref2020-d112119a', 24.53794700, 24.24386400, 29.90951500, 28.42676900, 28.61809900, 28.52007500, 27.86269200, 27.93661100, 28.16201000, 28.42508300, 28.71360800, 30.05789600, 1.9000),
+	('Motor_Gasoline', '3-AEO2020.28.ref2020-d112119a', 22.17087200, 21.95442400, 21.97848100, 21.98358000, 21.89487500, 21.60294700, 21.84707500, 22.03165400, 22.30040400, 22.41212100, 22.70756500, 23.41048800, 0.8000),
+	('Propane', '3-AEO2020.26.ref2020-d112119a', 16.63491800, 15.56014900, 16.02073100, 16.71264600, 17.15149300, 17.63664400, 18.32980300, 18.99862900, 19.33251800, 19.53301000, 19.62401200, 20.09750200, 1.2000);
+/*!40000 ALTER TABLE `oilprice` ENABLE KEYS */;
+
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
