@@ -4,7 +4,11 @@
 ![XAMPP](/Readme/XAMPP.PNG "Official explain")  
 
 [XAMPP](https://www.apachefriends.org/zh_tw/index.html) provides all sections that we need in this project, including **_Apache_** for web server hosting and **_Mysql(MariaDB)_** for database management.
-### 2. A implemented Database
+### 2. HeidiSQL (Recommended)
+![XAMPP](/Readme/Heidi.PNG "Heldi Screenshot")  
+[HeldiSQL](https://www.heidisql.com/) is recommended to import database fast and conveniently, it can also be use to manage database.
+
+### 3. A implemented Database
 Until this version of project, the database is still implemented in **local**, it will be modified to use a remote server in the near feature. But **for now you'll need a full copy of database** to make it work as intended.
 
 ## How do I deploy the project?
@@ -17,11 +21,21 @@ After installation completed, go to the path that XAMPP has been installed, shou
 
 And put all files in **_html_ of this project** into **_htdocs_**, done!
 ### 3. Deploy database files
-Same as below, first we go to XAMPP's install path **X:/xampp** or the path you modified. However, we go to the **_mysql_** this time, then the **_data_** folder. It should be look like this:  
+__Notice: You must have complete install XAMPP first when trying to deploy the databases.__
+![XAMPP control panel](/Readme/controlpanel.PNG)
 
-![databaselocation](/Readme/database.PNG)  
+Make sure that both **_Apache_** and **_MySQL_** are turn on, then proceed to open HeidiSQL, this should pop up:  
 
-Then copy the whole folder **_ebusproject_ from this project** into **_data_**, done!
+![Heldi Startup panel](/Readme/HeidiStartup.jpg)
+
+If there exist no workstate, you can add one by clicking the __add__ button. Then choose one workstate, click __open__.  
+If everything going well, you should come to this state, click __Files__ on the top-right, then click __loading SQL file...__, pick the .sql file from this project
+
+![Heldi Startup panel](/Readme/HeidiLoad.PNG)
+![Heldi Startup panel](/Readme/HeidiLoad2.PNG)
+
+Then there you go!
+
 
 ## How to use?
 ### 1. Open XAMPP control panel
@@ -39,8 +53,8 @@ After the panel is showen, turn on **_Apache_** and **_MySQL_** by click *Start*
 ![XAMPP control panel](/Readme/controlpanel.PNG)  
 
 ### 2. Open up browser
-Open up your browser, enter **_localhost/test.html_** in the url, and there you go!  
+Open up your browser, enter **_localhost/Vuetest.html_** in the url, and there you go!  
 
 ![index](/Readme/url.PNG)  
 
-The front page should only be named as *test.html* for code reliability, other pages should follow the same rule unless development stage of this project were done.
+The front page should only be named as *Vuetest.html* for code reliability, other pages should follow the same rule unless development stage of this project were done.
