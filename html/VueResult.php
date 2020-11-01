@@ -144,10 +144,6 @@ mysqli_select_db($conn, "ebusproject");
         
 
         //var lifecycle_value_K9A = 118669552;
-        var lifecycle_value_K9A = LifeCycle("K9A", condition_list[0], query_results["K9A"]["battery_price"], charger_price, station_price, condition_list[1],condition_list[2]);
-        var lifecycle_value_12m = LifeCycle("12米低地板", condition_list[0], query_results["12米低地板"]["battery_price"], charger_price, station_price, condition_list[1],condition_list[2]);
-        var lifecycle_value_KL5 = LifeCycle("RAC-700", condition_list[0], query_results["RAC-700"]["battery_price"], charger_price, station_price, condition_list[1],condition_list[2]);
-        var lifecycle_value_RAC = LifeCycle("KL5850L", condition_list[0], query_results["KL5850L"]["battery_price"], charger_price, station_price, condition_list[1],condition_list[2]);
         var lifecycle_value_dis = 106452602;
 
         var yearly_acc_value_K9A = [10364900, 10287167, 10209670, 10136641, 10068923, 10003388, 9941785, 9884125];
@@ -161,18 +157,22 @@ mysqli_select_db($conn, "ebusproject");
 
         vehicle_list.forEach(element => {
             if (element === "K9A") {
+                var lifecycle_value_K9A = LifeCycle("K9A", condition_list[0], query_results["K9A"]["battery_price"], charger_price, station_price, condition_list[1],condition_list[2]);
                 lifeSeries.push(lifecycle_value_K9A);
                 yearlySeries.push(yearly_acc_value_K9A);
             }
             if (element === "12米低地板") {
+                var lifecycle_value_12m = LifeCycle("12米低地板", condition_list[0], query_results["12米低地板"]["battery_price"], charger_price, station_price, condition_list[1],condition_list[2]);
                 lifeSeries.push(lifecycle_value_12m);
                 yearlySeries.push(yearly_acc_value_12m);
             }
             if (element === "RAC-700") {
+                var lifecycle_value_RAC = LifeCycle("RAC-700", condition_list[0], query_results["RAC-700"]["battery_price"], charger_price, station_price, condition_list[1],condition_list[2]);
                 lifeSeries.push(lifecycle_value_RAC);
                 yearlySeries.push(yearly_acc_value_RAC);
             }
             if (element === "KL5850L") {
+                var lifecycle_value_KL5 = LifeCycle("KL5850L", condition_list[0], query_results["KL5850L"]["battery_price"], charger_price, station_price, condition_list[1],condition_list[2]);
                 lifeSeries.push(lifecycle_value_KL5);
                 yearlySeries.push(yearly_acc_value_KL5);
             }
